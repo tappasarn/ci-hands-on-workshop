@@ -6,10 +6,9 @@ import utils.CurrencyFormatter;
 public class App {
     public static void main(String[] args) {
         String amount = args[0];
-        String locale = args[1];
 
         CurrencyFormatter currencyFormatter = new CurrencyFormatter();
 
-        System.out.println(currencyFormatter.format(amount, locale));
+        System.out.println(currencyFormatter.format(amount));
     }
 }
