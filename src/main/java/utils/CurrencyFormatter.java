@@ -1,7 +1,6 @@
 package utils;
+
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class CurrencyFormatter {
     public String format(String amount) {
