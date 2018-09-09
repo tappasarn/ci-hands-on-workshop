@@ -11,11 +11,20 @@ public class CurrencyFormatterTests {
 
         assertEquals("1,234", result);
     }
+
     @Test public void ShouldReturnCorrectAmountWithBiggerNumber() {
         CurrencyFormatter c = new CurrencyFormatter();
 
         String result = c.format("123456789");
 
         assertEquals("123,456,789", result);
+    }
+
+    @Test public void UseDecimalFormat() {
+        CurrencyFormatter c = new CurrencyFormatter();
+
+        String result = c.formatWithDecimalFormat("1234");
+
+        assertEquals("1,234", result);
     }
 }
