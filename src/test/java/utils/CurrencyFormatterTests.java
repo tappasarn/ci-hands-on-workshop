@@ -9,7 +9,7 @@ public class CurrencyFormatterTests {
 
         String result = c.format("1234", "en_Us");
 
-        assertEquals("123", result);
+        assertEquals("1234", result);
     }
 
 }
