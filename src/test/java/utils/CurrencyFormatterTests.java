@@ -7,9 +7,8 @@ public class CurrencyFormatterTests {
     @Test public void ShouldReturnCorrectAmount() {
         CurrencyFormatter c = new CurrencyFormatter();
 
-        String result = c.format("1234", "en_Us");
+        String result = c.format("1234");
 
-        assertEquals("1234", result);
+        assertEquals("1,234", result);
     }
-
 }
