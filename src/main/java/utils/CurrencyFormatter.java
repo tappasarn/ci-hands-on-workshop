@@ -1,18 +1,20 @@
 package utils;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class CurrencyFormatter {
     public String format(String amount) {
         char[] amountArr = amount.toCharArray();
         ArrayList<Character> convertedList = new ArrayList<>();
 
+        int y = 0;
         for(int i = amountArr.length-1; i >= 0; i--){
-            if(i % 3 == 0 && i != amountArr.length-1) {
+            if(y==3) {
                 convertedList.add(',');
+                y=0;
             }
             convertedList.add(amountArr[i]);
+            y++;
         }
 
         Collections.reverse(convertedList);
