@@ -54,6 +54,7 @@ After this, you should have a folder called `ci-hands-on-workshop` on your deskt
 ./gradlew build
 ```
 # The Workshop
+* https://docs.google.com/presentation/d/16pp2UfPNYjdIaRMsIUy_HeCg9PsXsAOOK_5yndCaKrQ/edit#slide=id.g42721b553c_0_59
 ## Unit Testing
 In the projects you will see 'App.java' and CurrencyFormatter.java
 
@@ -161,3 +162,7 @@ Althogh we already gain benefits from the unit tests we just added into our appl
 
 ## Connect Continuous Integration with GitHub
 // TODO
+### CircleCI
+### TravisCI
+
+## SonarClound
