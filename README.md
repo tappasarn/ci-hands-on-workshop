@@ -256,6 +256,20 @@ again for us, we are using Java with Gradle !
 ![travis sign up](https://user-images.githubusercontent.com/11821799/45927104-f51a4680-bf57-11e8-8850-3237cd0dc7df.png)
 
 * Enable the project that you want to activate TravisCI
+![travis enable project](https://user-images.githubusercontent.com/11821799/45927259-af12b200-bf5a-11e8-9ad3-2432a3e81907.png)
+
+* Similar to CircleCI example from above, TravisCI also needs a configuration file. In your project's root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop) create a file name '.travis.yml'.
+
+* Click [here](https://docs.travis-ci.com/user/languages/) for a full list of your favorite languages configuration file.
+
+* For our workshop please select Java. You will have to add the following code into .travis.yml file.
+```yaml
+language: java
+```
+
+* Yes ! just a single line. TravisCI happen to be very smart, just adding a single line will helps us get the project running. You can optimize the build further but we will not cover the optimization in this workshop. Click [here](https://docs.travis-ci.com/user/languages/java/) to read more about Java build
+
+* Commit and push !
 ## Protect your master with GitHub protected branch
 
 ## SonarClound
