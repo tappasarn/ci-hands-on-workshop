@@ -161,8 +161,80 @@ Your build has failed with an error saying that your test for ShouldReturnFormat
 Althogh we already gain benefits from the unit tests we just added into our application, nothing yet ensure that the defected code is not going to be merge into our master branch. That is what we will handle in the next section with Continuous Integration.
 
 ## Connect Continuous Integration with GitHub
-// TODO
+In this workshop, we will introduce you to 2 CI services which are...
+* CircleCI
+* TravisCI 
 ### CircleCI
+check out this document for different setting type for your favorite project languages
+
+For us, we will use Java
+
+* Create .circleci in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
+
+* Under .circleci folder create a config file name 'config.yml'. This file will be the place where we add the configuration for our project continuous integration.
+
+* Go to https://circleci.com then sign up with your github account.
+
+* Add this project.
+
+* Copy and paste the follwing code into your config.yml (this is the same as the sample that circleci.com gave to you. I only add a bit more comments).
+
+* Push code and hit start building button on circleci.com. It will create github webhook for us
+
+```yaml
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+# according to the document in above link, we always start with version 2 !
+version: 2
+#
+# jobs : each phase of your deployment process
+# for this project, we only have build phase
+jobs:
+  # our one and only phase begin here !
+  build:
+    # working directory for the job
+    # each job needs it own working directory
+    working_directory: ~/repo
+    #
+    # circleCI build happen in a container
+    # we need to give it an image !
+    docker:
+      # specify the version you desire here
+      # for us, we use JAVA 8
+      - image: circleci/openjdk:8-jdk
+    
+    environment:
+      # Customize the JVM maximum heap limit
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    #
+    # after we finish preparing
+    # add your build steps
+    steps:
+      # checkout the codebase
+      - checkout
+
+      # Download and cache dependencies
+      # just like NPM for js and NuGet for c#
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "build.gradle" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+        
+      # run tests!
+      - run: gradle test
+```
+
 ### TravisCI
 
 ## SonarClound
