@@ -237,8 +237,25 @@ jobs:
 * Push code and hit start building button on circleci.com. It will create github webhook for us
 ![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
 
+* Right now, CircleCI will be lintening to all the branches and run the build everytime the new code get push into our github origin
+
+* Maybe we would not want to go that far (it is totally up to you). If you want CircleCI to start building only for pull requests, here is how.
+
+* On your project, click at setting
+![circleci setting](https://user-images.githubusercontent.com/11821799/45927222-dd43c200-bf59-11e8-858c-e1b2d9e8067c.png)
+
+* Go to advance setting, then click and 'on' for 'only build for pull requests'
+![circleci pr only](https://user-images.githubusercontent.com/11821799/45927231-ff3d4480-bf59-11e8-8405-a16d54a6c014.png)
 ### TravisCI
 
+In case you want to read more about getting started with travisCI, check out [this link](https://docs.travis-ci.com/user/getting-started/). It has information about your favorite languages.
+
+again for us, we are using Java with Gradle !
+
+* Visit https://travis-ci.org/ and sign up with your github account
+![travis sign up](https://user-images.githubusercontent.com/11821799/45927104-f51a4680-bf57-11e8-8850-3237cd0dc7df.png)
+
+* Enable the project that you want to activate TravisCI
 ## Protect your master with GitHub protected branch
 
 ## SonarClound
