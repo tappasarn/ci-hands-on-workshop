@@ -165,21 +165,23 @@ In this workshop, we will introduce you to 2 CI services which are...
 * CircleCI
 * TravisCI 
 ### CircleCI
-check out this document for different setting type for your favorite project languages
+check out [this document](https://circleci.com/docs/2.0/language-guides/) for different setting type for your favorite project languages
 
-For us, we will use Java
+For us, we will use Java with gradle.
 
 * Create .circleci in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
 
 * Under .circleci folder create a config file name 'config.yml'. This file will be the place where we add the configuration for our project continuous integration.
 
 * Go to https://circleci.com then sign up with your github account.
+![circleci sing up](https://user-images.githubusercontent.com/11821799/45926980-ed59a280-bf55-11e8-817d-77eea8c2e1df.png)
 
 * Add this project.
-
+![circleci add project](https://user-images.githubusercontent.com/11821799/45926981-edf23900-bf55-11e8-9a04-6502f0012190.png)
 * Copy and paste the follwing code into your config.yml (this is the same as the sample that circleci.com gave to you. I only add a bit more comments).
 
 * Push code and hit start building button on circleci.com. It will create github webhook for us
+![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
 
 ```yaml
 # Java Gradle CircleCI 2.0 configuration file
@@ -236,5 +238,7 @@ jobs:
 ```
 
 ### TravisCI
+
+## Protect your master with GitHub protected branch
 
 ## SonarClound
