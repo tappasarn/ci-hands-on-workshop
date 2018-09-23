@@ -178,11 +178,8 @@ For us, we will use Java with gradle.
 
 * Add this project.
 ![circleci add project](https://user-images.githubusercontent.com/11821799/45926981-edf23900-bf55-11e8-9a04-6502f0012190.png)
+
 * Copy and paste the follwing code into your config.yml (this is the same as the sample that circleci.com gave to you. I only add a bit more comments).
-
-* Push code and hit start building button on circleci.com. It will create github webhook for us
-![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
-
 ```yaml
 # Java Gradle CircleCI 2.0 configuration file
 #
@@ -236,6 +233,9 @@ jobs:
       # run tests!
       - run: gradle test
 ```
+
+* Push code and hit start building button on circleci.com. It will create github webhook for us
+![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
 
 ### TravisCI
 
