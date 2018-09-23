@@ -26,4 +26,5 @@ public class CurrencyFormatterTests {
     
         assertEquals("123", result);
     }
+    
 }
