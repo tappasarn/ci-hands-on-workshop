@@ -1,60 +1,26 @@
-# Setup
+# CI-HANDS-ON-WORKSHOP
+This is a workshop to introduce basic knowledge of continuous integration. 
 
-### 1. Create a github account
-### 2. Install JDK
+It covers the problems that developers used to face when they worked on the project without continuous integration system. 
 
-##### For macOS,
-Install [Homebrew](https://brew.sh/).  
-Then, run the following command in Terminal.
-```
-$ brew tap caskroom/versions
-$ brew cask install java8
-```
+Also, it touches the topic of unit testing before introduce you to CircleCI and TravisCI which are the continuous services. At the end we will talk about how to keep our master branch safe and added a bit of knowledge on coding quality by using SonarCloud.
 
-##### For Windows,
-Download and install JDK8 from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+## Technology Stack
+* Java with Gradle
+* JUnit
+* CircleCI
+* TravisCI
+* GitHub
+* SonarCloud
 
-### 3. Install text editor
-
-We recommend [VSCode](https://code.visualstudio.com/). Still, other text editor is fine.
-
-### 4. Fork the project
-Since you will be setting up your own CI system. You have to fork this project into your own github account.
-Go to https://github.com/tappasarn/ci-hands-on-workshop and click fork on the top right.
-
-### 5. Install git
-
-##### For macOS,
-You alreay have `git` installed from [Step 2](https://github.com/tappasarn/ci-hands-on-workshop/new/master#2-install-jdk).
-
-##### For Windows,
-Download and install git [here](https://git-scm.com/download/win).
+## Table of Content
+* [Setup the project](./documentation/setup)
+* [Workshop's presentation slice]()
 
 
-### 6. Clone the repository
+This project is completely open source. We have intention to share the knowledge back to the society. Feel free to fork it for your own need or send us a pull request if you have any idea that this project can be improved.
 
-##### For Windows,
 
-In git bash, run the following commands,
-
-Change directory to desktop,
-```
-$ cd ~/Desktop/
-```
-
-Clone source code in to a folder.
-```
-$ git clone https://github.com/your-github-account/ci-hands-on-workshop.git
-```
-
-After this, you should have a folder called `ci-hands-on-workshop` on your desktop.
-
-### 5. Try to build the project
-```
-./gradlew build
-```
-# The Workshop
-* https://docs.google.com/presentation/d/16pp2UfPNYjdIaRMsIUy_HeCg9PsXsAOOK_5yndCaKrQ/edit#slide=id.g42721b553c_0_59
 ## Unit Testing
 In the projects you will see 'App.java' and CurrencyFormatter.java
 
