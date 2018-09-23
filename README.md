@@ -270,6 +270,20 @@ language: java
 * Yes ! just a single line. TravisCI happen to be very smart, just adding a single line will helps us get the project running. You can optimize the build further but we will not cover the optimization in this workshop. Click [here](https://docs.travis-ci.com/user/languages/java/) to read more about Java build
 
 * Commit and push !
+
+* You will see TravisCI start showing up on your pull requests !
+![travis pr](https://user-images.githubusercontent.com/11821799/45927526-8e4c5b80-bf5e-11e8-81af-3d7f3e54f6a4.png)
+
+* Same as CircleCI example from above, now Travis is also running on all the branches that get pushed into the origin. If you want to enable the build only on pull requests, here is how.
+
+* Go to your project in https://travis-ci.org
+
+* Click at 'more options' and then settings
+![travis settings](https://user-images.githubusercontent.com/11821799/45927558-424de680-bf5f-11e8-914b-b67a213a67cf.png)
+
+* Disable 'build pushed branches'
+![travis pr only](https://user-images.githubusercontent.com/11821799/45927572-70332b00-bf5f-11e8-87ca-7b0b8d8d5bdc.png)
+
 ## Protect your master with GitHub protected branch
 
 ## SonarClound
