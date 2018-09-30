@@ -1,9 +1,22 @@
 language: java
+sudo: false
+install: true
+
 addons:
   sonarcloud:
-    organization: "tappasarn-github" # the key of the org you chose at step #3
+    organization: "tappasarn-github"
     token:
       secure: "nydHcb4fL8KBZ7q1e6TwAEqEHessK0tBQfbhAhuCW1LC9yoOIbt1ksdBINukZW/x/aslWncxni6zqIWeOjDlGNxa4ASfWCfFeS2J8OyjbPRVsie6kVKaKpW6zk93HedxnsCc18OqQcKBeZDYLTc9bWi4dyelNh6f4tgvq4S4PbIrd2WwuwbfSVnHrFUUEYAAfnk6DaCyn9XE7TnSK+tdEBi7XkikUljNbPSaTt95PWoIrvK5psvdcjTCYmGQdtWin3kCXtRpH3M9CV6kFUHmBAFF9TMclnstfQlBrrGCvttI/1NV5tnnK2G/u2LXJ1QIJgYDDtHYvZ28pEdNkvZMrziFfKC5Ekaw4wSzbqM+Cl3sM0E/x4JvIeza89WzCnfQ0t5Lwt1vB3R2xl7sDeZeNuJxdBmSyqHffst18PWwDHWb4Fj0RpgNCMSghxL+NBkPC599uembjTdkziOUebZYlyAW53PM5HOSnYaRHDnWyfc4wn9HFv6LXK6Rxn1i5LYg7y/zIvVqLDTMkRWWPsrb6mBvMBL5ezc5XFcY+DvnzVmE/Mrn4GwtQkDoXACGRFYyUjHRus9ypcPibkd2RYCuU0fyiClgCS2dVK6HQmR8VUcyq20r+SX4w2GR3VaE19nT/al31FDGFgyR55zkmpO4r0hdv8Iga2gBEsFz/+BUQfA="
+
+jdk:
+  - oraclejdk8
+
 script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
+  - ./gradlew sonarqube
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    - '$HOME/.gradle'
+    - '.gradle'
