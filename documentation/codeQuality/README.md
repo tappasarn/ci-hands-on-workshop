@@ -36,3 +36,8 @@ plugins {
 ```
 8. Now copy and run the second command
     * For Windows user, run the second command on GitBash (there was a problem when I tried to run it with cmd and powerShell).
+
+9. After the second command finished executing, reload the SonarCloud's website. It will display analytic results to you.
+![analytic results](https://user-images.githubusercontent.com/11821799/46253852-e1b73000-c4af-11e8-9309-8a9e7676958e.png)
+
+10. What just happened ? We have just push our code in the working branch to SonarCloud to analyze the standard of our code quality.
