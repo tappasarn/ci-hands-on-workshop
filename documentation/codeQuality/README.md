@@ -130,8 +130,19 @@ jacocoTestReport {
 }
 ```
 
-
-
-
 ## What have we done so far ?
 Up until now, we are able to analyze our code base using the service provide by SonarCloud. However, the analyze process is not yet automated. We are back to the same issue that we used to have with unit tests early in the beginning of this workshop. Every time we have made some changes into our code, we will have to use SonarCloud's analyze command and manually run it by ourselves. I'm sure you would not want to do it. Most of us might not even want to remember the command itself !
+
+## Integrate SonarCould with GitHub and Continuous Integration
+
+In the beginning of this section, we have logged into SonarCloud using our GitHub account. In fact, right now we have got SonarCloud running on our master branch.
+
+![sonar on master](https://user-images.githubusercontent.com/11821799/46255981-9d875800-c4ce-11e8-9dfa-9070bfb8b0d4.png)
+
+However, just having SonarCloud evaluating our master branch and show the result on its site does not seem to be very useful to us. We would not want to come to SonarCloud's site and check the health of our master every hour, or maybe onces we realize that our master has failed, it has already been failed for days or weeks.
+
+### Fail fast (Pull Request Analysis)
+The objective for this section is to block the pull request that does not pass SonarCloud's standard from merging into the master branch. So the owner of the pull request knows that their PR need to be taken care of.
+
+### Use TravisCI to trigger SonarCloud's analysis
+1. 
