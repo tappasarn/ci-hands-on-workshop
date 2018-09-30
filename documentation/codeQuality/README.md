@@ -145,4 +145,48 @@ However, just having SonarCloud evaluating our master branch and show the result
 The objective for this section is to block the pull request that does not pass SonarCloud's standard from merging into the master branch. So the owner of the pull request knows that their PR need to be taken care of.
 
 ### Use TravisCI to trigger SonarCloud's analysis
-1. 
+1. Define SONAR_TOKEN in TravisCI repository's environment variable settings
+    1. Go to https://travis-ci.org/ and click at "ci-hands-on-workshop".
+
+    2. Click setting from the dropdown menu.
+    ![travis setting](https://user-images.githubusercontent.com/11821799/46256285-c9a4d800-c4d2-11e8-95e9-eb1468de3138.png)
+
+    3. Add your SonarCloud's token in Environment variable section. For simplicity of the workshop, let's give the token the same name, SONAR_TOKEN.
+    ![travis add token](https://user-images.githubusercontent.com/11821799/46256317-361fd700-c4d3-11e8-99da-303fcdfefb82.png)
+
+2. Get SonarCloud.io organization key
+    1. Visit this https://sonarcloud.io/account/organizations
+    
+    2. You should see the organization key near by your project.
+    ![sonar org key](https://user-images.githubusercontent.com/11821799/46256416-da564d80-c4d4-11e8-8c82-b8076133ce55.png)
+
+3. Create sonar-project.properties
+
+4. Add following code to .travis.yml
+```yaml
+language: java
+# new code are below this comment
+addons:
+  sonarcloud:
+    organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
+    token:
+      secure: SONAR_TOKEN
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
+```
+
+5. Generate GitHub's personal access token so SonarCould can give comment to your code.
+    1. Go to developer settings
+    ![github dev setting](https://user-images.githubusercontent.com/11821799/46256677-0de6a700-c4d8-11e8-9cf8-cb24649f10a2.png)
+
+    2. Click at "personal access token" and "generate new token"
+
+    3. Click at the following and then generate the token (If your repository is private you will have to click at "repo" scope).
+    ![token config](https://user-images.githubusercontent.com/11821799/46256788-b8ab9500-c4d9-11e8-947d-0b3a6ea5a573.png)
+
+    4. Back to SonarCloud's site click at the following.
+    ![pr token](https://user-images.githubusercontent.com/11821799/46256825-6d45b680-c4da-11e8-82ff-f04e3620e4bd.png)
+
+    5. Enter the token you have just created in the “GitHub > Authentication token” section.
+    ![github token](https://user-images.githubusercontent.com/11821799/46256875-1db3ba80-c4db-11e8-97db-0cdc0a034edf.png)
