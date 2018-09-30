@@ -12,19 +12,19 @@ public class CurrencyFormatterTests {
     
     //     assertEquals("1,234", result);
     // }
-    @Test public void ShouldReturnFormattedNumberWithMultipleCommas() {
-        CurrencyFormatter c = new CurrencyFormatter();
+    // @Test public void ShouldReturnFormattedNumberWithMultipleCommas() {
+    //     CurrencyFormatter c = new CurrencyFormatter();
     
-        String result = c.format("1234567");
+    //     String result = c.format("1234567");
     
-        assertEquals("1,234,567", result);
-    }
-    @Test public void ShouldReturnFormattedNumberWithNoComma() {
-        CurrencyFormatter c = new CurrencyFormatter();
+    //     assertEquals("1,234,567", result);
+    // }
+    // @Test public void ShouldReturnFormattedNumberWithNoComma() {
+    //     CurrencyFormatter c = new CurrencyFormatter();
     
-        String result = c.format("123");
+    //     String result = c.format("123");
     
-        assertEquals("123", result);
-    }
+    //     assertEquals("123", result);
+    // }
     
 }
