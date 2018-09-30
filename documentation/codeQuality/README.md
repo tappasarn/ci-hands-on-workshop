@@ -170,7 +170,7 @@ addons:
   sonarcloud:
     organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
     token:
-      secure: SONAR_TOKEN
+      secure: $SONAR_TOKEN
 script:
   # other script steps might be done before running the actual analysis
   - sonar-scanner
