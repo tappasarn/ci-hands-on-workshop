@@ -8,5 +8,7 @@ public class App {
         String amount = args[0];
 
         CurrencyFormatter currencyFormatter = new CurrencyFormatter();
+
+        System.out.println(currencyFormatter.format(amount));
     }
 }
