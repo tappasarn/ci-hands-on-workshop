@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class CurrencyFormatterTests {
-    @Test public void ShouldReturnFormattedNumberWithSingleComma() {
-        CurrencyFormatter c = new CurrencyFormatter();
+    // @Test public void ShouldReturnFormattedNumberWithSingleComma() {
+    //     CurrencyFormatter c = new CurrencyFormatter();
     
-        String result = c.format("1234");
+    //     String result = c.format("1234");
     
-        assertEquals("1,234", result);
-    }
+    //     assertEquals("1,234", result);
+    // }
     @Test public void ShouldReturnFormattedNumberWithMultipleCommas() {
         CurrencyFormatter c = new CurrencyFormatter();
     
