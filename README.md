@@ -3,7 +3,7 @@ This is a workshop to introduce basic knowledge of continuous integration.
 
 It covers the problems that developers used to face when they worked on the project without continuous integration system. 
 
-Also, it touches the topic of unit testing before introduce you to CircleCI and TravisCI which are the continuous services. At the end we will talk about how to keep our master branch safe and added a bit of knowledge on coding quality by using SonarCloud.
+Also, it touches the topic of unit testing before introduce you to CircleCI and TravisCI which are services for continuous integration. At the end, we will talk about how to keep our master branch safe and added a bit of knowledge on coding quality using SonarCloud.
 
 ## Technology Stack
 * Java with Gradle
@@ -15,7 +15,7 @@ Also, it touches the topic of unit testing before introduce you to CircleCI and 
 
 ## Table of Content
 * [Setup the project](./documentation/setup)
-* [Workshop's presentation slice](./documentation/presentation)
+* [Workshop's presentation](./documentation/presentation)
 * [Unit Testing](./documentation/unitTesting)
 * [Connect Continuous Integration services with GitHub](./documentation/continuousIntegration)
 * [Protected Branch](./documentation/protectedBranch)
