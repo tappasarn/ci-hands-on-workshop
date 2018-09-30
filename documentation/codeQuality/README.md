@@ -78,6 +78,60 @@ If we take a look at our build.gradle, we will see that we do not have any plugi
 ### Let's add JaCoCo (Java Code Coverage)
 JaCoCo is a gradle's plugin that helps provide code coverage metrics to us. You can read more about JaCoCo [here](https://docs.gradle.org/current/userguide/jacoco_plugin.html).
 
+1. Go to build.gradle and then add JaCoCo into plugins section. Here is what our plugin section looks like.
+```
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building an application
+    id 'application'
+
+    id "org.sonarqube" version "2.6"
+
+    // Add this line
+    id "jacoco"
+}
+```
+
+2. To see the test report, run the following command
+```
+gradle test jacocoTestReport
+```
+
+3. By default, you test report will be located under .build/reports/jacoco
+
+4. Now let's return the SonarCloud analyze command. Your coverage result should be present on the SonarCloud's site.
+
+5. In Addition, you can fix the version of JaCoCo by adding this section into build.gradle
+```
+plugins {
+    // plugins area
+}
+jacoco {
+    toolVersion = "0.8.1"
+}
+```
+6. Moreover, there are other types of reports than just .html (but just .html is enough for this workshop).
+
+```
+plugins {
+    // plugins area
+}
+jacoco {
+    // jacoco's version
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled true
+    }
+}
+```
+
+
+
 
 ## What have we done so far ?
 Up until now, we are able to analyze our code base using the service provide by SonarCloud. However, the analyze process is not yet automated. We are back to the same issue that we used to have with unit tests early in the beginning of this workshop. Every time we have made some changes into our code, we will have to use SonarCloud's analyze command and manually run it by ourselves. I'm sure you would not want to do it. Most of us might not even want to remember the command itself !
