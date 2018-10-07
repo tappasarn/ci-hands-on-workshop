@@ -165,15 +165,28 @@ The objective for this section is to block the pull request that does not pass S
 4. Add following code to .travis.yml
 ```yaml
 language: java
-# new code are below this comment
+sudo: false
+install: true
+
 addons:
   sonarcloud:
     organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
     token:
       secure: $SONAR_TOKEN
+
+jdk:
+  - oraclejdk8
+
 script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
+  - ./gradlew sonarqube
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    - '$HOME/.gradle'
+    - '.gradle'
+
 ```
 
 5. Generate GitHub's personal access token so SonarCould can give comment to your code in a pull request.
