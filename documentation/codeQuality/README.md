@@ -64,9 +64,9 @@ plugins {
 12. Rerun the analyze command again !
 
 ## More problems !
-We have said early on that SonarCloud does not only analyze your code base, however it actually reports the unit test coverage of our project. 
+We have said earlier that SonarCloud does not only analyze your code base, but also reports the unit test coverage of our project. 
 
-Having unit test coverage helps us to have visibility on how trustful our software is. With test coverage report, we should be able to easily tell where unit test are missing and priority them in the development team.
+Having unit test coverage shows us how trustful our software is. With test coverage report, we should be able to easily tell where unit test are missing and prioritize them in the development team.
 
 However, right now, even we have added some unit test in the beginning of this workshop SonarCloud still reports 0% coverage for our project.
 
@@ -99,11 +99,11 @@ plugins {
 gradle test jacocoTestReport
 ```
 
-3. By default, you test report will be located under .build/reports/jacoco
+3. By default, your test report will be located under .build/reports/jacoco
 
-4. Now let's return the SonarCloud analyze command. Your coverage result should be present on the SonarCloud's site.
+4. Now let's rerun the SonarCloud analyze command. Your coverage result should be present on the SonarCloud's site.
 
-5. In Addition, you can fix the version of JaCoCo by adding this section into build.gradle
+5. In Addition, you can specify the version of JaCoCo by adding this section into build.gradle
 ```
 plugins {
     // plugins area
@@ -135,7 +135,7 @@ Up until now, we are able to analyze our code base using the service provide by 
 
 ## Integrate SonarCould with GitHub and Continuous Integration
 
-The objective for this section is to block the pull request that does not pass SonarCloud's standard from merging into the master branch. So the owners of the pull requests know that their PR need to be taken care of.
+The objective for this section is to block the pull request (PR) that does not pass SonarCloud's standard from merging into the master branch. So the owners of the pull requests know that their PR need to be taken care of.
 
 ### Use TravisCI to trigger SonarCloud's analysis
 1. Define SONAR_TOKEN in TravisCI repository's environment variable settings
@@ -153,9 +153,7 @@ The objective for this section is to block the pull request that does not pass S
     2. You should see the organization key near by your project.
     ![sonar org key](https://user-images.githubusercontent.com/11821799/46256416-da564d80-c4d4-11e8-8c82-b8076133ce55.png)
 
-3. Create sonar-project.properties
-
-4. Add following code to .travis.yml
+3. Add following code to .travis.yml
 ```yaml
 language: java
 sudo: false
@@ -181,12 +179,12 @@ cache:
     - '.gradle'
 
 ```
-5. At this point, if you are still enable travis ci build process for branches, you can push your project into GitHub sever and see SonarCloud is being execute by TravisCI.
+4. At this point, if you are still enable travis ci build process for branches, you can push your project into GitHub server and see SonarCloud is being execute by TravisCI.
 ![sonarcloud with single branch](https://user-images.githubusercontent.com/11821799/46581358-5d415000-ca61-11e8-8526-f6e684425f34.png)
 
-6. Now similar to the build process that we have done earlier in this workshop, we would want to execute them on each of our pull request to protect our master branch and here is how. 
+5. Now similar to the build process that we have done earlier in this workshop, we would want to execute them on each of our pull request to protect our master branch and here is how. 
 
-7. Generate GitHub's personal access token so SonarCould can give comment to your code in a pull request.
+6. Generate GitHub's personal access token so SonarCould can give comment to your code in a pull request.
     1. Go to developer settings
     ![github dev setting](https://user-images.githubusercontent.com/11821799/46256677-0de6a700-c4d8-11e8-9cf8-cb24649f10a2.png)
 
@@ -201,7 +199,7 @@ cache:
     5. Enter the token you have just created in the “GitHub > Authentication token” section.
     ![github token](https://user-images.githubusercontent.com/11821799/46256875-1db3ba80-c4db-11e8-97db-0cdc0a034edf.png)
 
-8. Let's create a new branch and try adding a non-compliant code into our code base.
+7. Let's create a new branch and try adding a non-compliant code into our code base.
 
 ```java
 // update our main class so it looks just like below
@@ -218,16 +216,18 @@ public static void main(String[] args) {
     System.out.println(currencyFormatter.format(amount));
 }
 ```
-9. Make a pull request against the master branch.
+8. Make a pull request against the master branch.
+![make pr](https://user-images.githubusercontent.com/11821799/46903012-2358c980-cef9-11e8-82b4-3c96b7b423e4.png)
+![make pr1](https://user-images.githubusercontent.com/11821799/46903004-06bc9180-cef9-11e8-8b7a-290d0d1e7050.png)
 
-10. After TravisCI is done analyzing our PR you will see SonarCloud's action in our pull request.
+9. After TravisCI is done analyzing our PR you will see SonarCloud's action in our pull request.
 ![sonarcloud comments](https://user-images.githubusercontent.com/11821799/46581564-edcd5f80-ca64-11e8-8369-c5718eefa4a0.png)
 
-11. Similar to build status, we can add rules to block pull requests that do not satisfy the SonarCloud's coding standard from merging.
+10. Similar to build status, we can add rules to block pull requests that do not satisfy the SonarCloud's coding standard from merging.
 ![blocking rule](https://user-images.githubusercontent.com/11821799/46581592-6f24f200-ca65-11e8-857d-fb649886e331.png)
 ![pr status](https://user-images.githubusercontent.com/11821799/46581566-eefe8c80-ca64-11e8-905c-63b88ba86647.png)
 
-12. You can also view the SonarCloud's status of each branch from its site.
+11. You can also view the SonarCloud's status of each branch from its site.
 ![sonarcloud site status](https://user-images.githubusercontent.com/11821799/46581633-56690c00-ca66-11e8-9094-51e8026bd235.png)
 
-13. Congratulations ! now your development team can be sure that your code base are always up to the standard.
+12. Congratulations ! now your development team can be sure that your code base are always up to the standard.
