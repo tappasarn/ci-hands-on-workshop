@@ -19,7 +19,7 @@ Also, it touches the topic of unit testing before introduce you to CircleCI and 
 * [Unit Testing](./documentation/unitTesting)
 * [Connect Continuous Integration services with GitHub](./documentation/continuousIntegration)
 * [Protected Branch](./documentation/protectedBranch)
-* Code Quality (TODO !!!!)
+* [Code Quality](./documentation/codeQuality)
 
 ### Note
 This project is completely open source. We have intention to share the knowledge back to the society. Feel free to fork it for your own need or send us a pull request if you have any idea on how this project can be improved.
