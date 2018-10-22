@@ -1,5 +1,5 @@
 # Unit Testing
-In the projects you will see `App.java` and `utils/CurrencyFormatter.java`.
+In the projects you will see `App.java` and `CurrencyFormatter.java`.
 
 Currently the implementation of `CurrencyFormatter.java` is relying on `DecimalFormat` class.
 
