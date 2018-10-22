@@ -7,17 +7,17 @@ check out [this document](https://circleci.com/docs/2.0/language-guides/) for di
 
 For us, we will use Java with gradle.
 
-1. Create .circleci directory in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
-
-2. Under .circleci folder create a config file name 'config.yml'. This file will be the place where we add the configuration for our project continuous integration.
-
-3. Go to https://circleci.com then sign up with your github account.
+1. Go to https://circleci.com then sign up with your github account.
 ![circleci sing up](https://user-images.githubusercontent.com/11821799/45926980-ed59a280-bf55-11e8-817d-77eea8c2e1df.png)
 
-4. Add this project.
+2. Add this project.
 ![circleci add project](https://user-images.githubusercontent.com/11821799/45926981-edf23900-bf55-11e8-9a04-6502f0012190.png)
 
-5. Copy and paste the following code into your config.yml (this is the same as the sample that circleci.com gave to you. I only add a bit more comments).
+3. Create `.circleci` directory in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
+
+4. Under `.circleci` folder create a config file name `config.yml`. This file will be the place where we add the configuration for our project continuous integration.
+
+5. Copy and paste the following code into your `config.yml` (this is the same as the sample that circleci.com gave to you. I only add a bit more comments).
 ```yaml
 # Java Gradle CircleCI 2.0 configuration file
 #
@@ -72,7 +72,7 @@ jobs:
       - run: gradle test
 ```
 
-6. Push code and hit start building button on circleci.com. It will create a github webhook for us
+6. Push code and hit `start building` button on circleci.com. It will create a github webhook for us
 ![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
 
 7. Right now, CircleCI will be watching for changes that happen in all branches and start the build process, when new code has pushed into ours github origin.
@@ -97,11 +97,11 @@ again for us, we are using Java with Gradle !
 2. Enable the project that you want to activate TravisCI
 ![travis enable project](https://user-images.githubusercontent.com/11821799/45927259-af12b200-bf5a-11e8-9ad3-2432a3e81907.png)
 
-3. Similar to CircleCI example from above, TravisCI also needs a configuration file. In your project's root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop) create a file name '.travis.yml'.
+3. Similar to CircleCI example from above, TravisCI also needs a configuration file. In your project's root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop) create a file name `.travis.yml`.
 
 4. Click [here](https://docs.travis-ci.com/user/languages/) for a full list of your favorite languages configuration file.
 
-5. For our workshop please select Java. You will have to add the following code into .travis.yml file.
+5. For our workshop please select Java. You will have to add the following code into `.travis.yml` file.
 ```yaml
 language: java
 ```
