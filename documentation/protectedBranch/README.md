@@ -21,3 +21,5 @@ In this section, we want to block the defected pull requests from being able to 
     ![rules](https://user-images.githubusercontent.com/11821799/45928246-c8bbf580-bf6a-11e8-8b43-f97f7e873990.png)
 
 4. Now you will not be able to merge defected pull requests that are being reported from your CI service into the master branch. Everyone in the team will have to follow this rules even if you are the admin of the project.
+
+In the next step, we will fix our code to satisfy the requirements described in the unit tests.
