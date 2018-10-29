@@ -48,7 +48,16 @@ $ git clone https://github.com/your-github-account/ci-hands-on-workshop.git
 
 After this, you should have a folder called `ci-hands-on-workshop` on your desktop.
 
-### 5. Try to build the project
+### 7. Checking out to a new branch
+
+We employs feature branching workflow. In this workflow, we need to create a branch for our feature.  
+So, we need to execute the command below to create and switch to a new branch.
+
+```
+git checkout -b improve-currrency-formatter-performance
+```
+
+### 8. Try to build the project
 ```
 ./gradlew build
 ```
