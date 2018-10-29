@@ -1,0 +1,51 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+# according to the document in above link, we always start with version 2 !
+version: 2
+#
+# jobs : each phase of your deployment process
+# for this project, we only have build phase
+jobs:
+  # our one and only phase begin here !
+  build:
+    # working directory for the job
+    # each job needs it own working directory
+    working_directory: ~/repo
+    #
+    # circleCI build happen in a container
+    # we need to give it an image !
+    docker:
+      # specify the version you desire here
+      # for us, we use JAVA 8
+      - image: circleci/openjdk:8-jdk
+
+    environment:
+      # Customize the JVM maximum heap limit
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    #
+    # after we finish preparing
+    # add your build steps
+    steps:
+      # checkout the codebase
+      - checkout
+
+      # Download and cache dependencies
+      # just like NPM for js and NuGet for c#
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "build.gradle" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      # run tests!
+      - run: gradle test
