@@ -24,4 +24,12 @@ public class CurrencyFormatterTests {
 
       assertEquals("123", result);
   }
+
+  @Test public void ShouldReturnFormattedNumberWithNoComma() {
+      CurrencyFormatter c = new CurrencyFormatter();
+
+      String result = c.format("12344");
+
+      assertEquals("12,344", result);
+  }
 }
