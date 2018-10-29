@@ -70,12 +70,6 @@ With the changes above our code base is facing with 2 big problems.
 ```java
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-
-.
-.
-.
-
-
     @Test public void ShouldReturnFormattedNumberWithSingleComma() {
         CurrencyFormatter c = new CurrencyFormatter();
 
