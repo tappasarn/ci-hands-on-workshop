@@ -5,7 +5,7 @@ Currently the implementation of `CurrencyFormatter.java` is relying on `DecimalF
 
 Try execute our program with the following commands.
 
-```
+```sh
 ./gradlew run --args "100"
 ./gradlew run --args "1000"
 ./gradlew run --args "1000000"
@@ -50,7 +50,7 @@ public class CurrencyFormatter {
 1. Delete the code in `CurrencyFormatter.java` and replace with the code above.
 
 2. Now lets verify the code that we just applied by running the following commands.
-```
+```sh
 ./gradlew run --args "100"
 ./gradlew run --args "1000"
 ./gradlew run --args "1000000"
@@ -65,7 +65,7 @@ With the changes above our code base is facing with 2 big problems.
 2. This code can be easily merged into our master branch. It can break our perfectly running code !
 
 ## Adding the unit tests
-1. Visit `CurrencyFormatterTests.java` and add the following code into the file.
+1. Update `src/test/java/utils/CurrencyFormatterTests.java` to match the code below.
 
 ```java
 import org.junit.Test;
@@ -93,9 +93,10 @@ public class CurrencyFormatterTests {
 
         assertEquals("123", result);
     }
+}
 ```
 2. Now rebuild the project with
-```
+```sh
 ./gradlew build
 ```
 3. Your build has failed with an error saying that your test for `ShouldReturnFormattedNumberWithNoComma` is not passing.
