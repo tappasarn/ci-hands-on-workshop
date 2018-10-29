@@ -19,7 +19,7 @@ Also, it touches the topic of unit testing before introduce you to CircleCI and 
 * [Unit Testing](./documentation/unitTesting)
 * [Connect Continuous Integration services with GitHub](./documentation/continuousIntegration)
 * [Protected Branch](./documentation/protectedBranch)
-* [Let's fix out CurrentFormatter](./documentation/fixCurrentFormatter)
+* [Let's fix CurrentFormatter](./documentation/fixCurrentFormatter)
 * [Code Quality](./documentation/codeQuality)
 
 ### Note
