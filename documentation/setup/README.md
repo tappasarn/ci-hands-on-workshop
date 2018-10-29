@@ -54,7 +54,7 @@ We employs feature branching workflow. In this workflow, we need to create a bra
 So, we need to execute the command below to create and switch to a new branch.
 
 ```
-git checkout -b improve-currrency-formatter-performance
+$ git checkout -b improve-currrency-formatter-performance
 ```
 
 ### 8. Try to build the project
