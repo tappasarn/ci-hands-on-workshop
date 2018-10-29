@@ -59,5 +59,5 @@ $ git checkout -b improve-currrency-formatter-performance
 
 ### 8. Try to build the project
 ```
-./gradlew build
+$ ./gradlew build
 ```
