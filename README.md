@@ -14,8 +14,8 @@ Also, it touches the topic of unit testing before introduce you to CircleCI and 
 * SonarCloud
 
 ## Table of Content
-* [Setup the project](./documentation/setup)
 * [Workshop's presentation](./documentation/presentation)
+* [Setup the project](./documentation/setup)
 * [Unit Testing](./documentation/unitTesting)
 * [Connect Continuous Integration services with GitHub](./documentation/continuousIntegration)
 * [Protected Branch](./documentation/protectedBranch)
