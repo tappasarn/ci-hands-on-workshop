@@ -72,17 +72,35 @@ jobs:
       - run: gradle test
 ```
 
-6. Push code and hit `start building` button on circleci.com. It will create a github webhook for us
+6. Next, We need to stage our changes by executing the command below.
+
+```
+$ git add .
+```
+
+7. Next, we commit the change by executing the command below.
+
+```
+$ git commit -m 'Add circleci config file'
+```
+
+8. Next, push changes to origin
+
+```
+$ git push
+```
+
+Push code and hit `start building` button on circleci.com. It will create a github webhook for us
 ![circleci start](https://user-images.githubusercontent.com/11821799/45926982-edf23900-bf55-11e8-930b-459d935c84c6.png)
 
-7. Right now, CircleCI will be watching for changes that happen in all branches and start the build process, when new code has pushed into ours github origin.
+9. Right now, CircleCI will be watching for changes that happen in all branches and start the build process, when new code has pushed into ours github origin.
 
-8. Maybe we would not want to go that far (it is totally up to you). If you want CircleCI to start building only for pull requests, here is how.
+10. Maybe we would not want to go that far (it is totally up to you). If you want CircleCI to start building only for pull requests, here is how.
 
-9. On your project, click at setting
+11. On your project, click at setting
 ![circleci setting](https://user-images.githubusercontent.com/11821799/45927222-dd43c200-bf59-11e8-858c-e1b2d9e8067c.png)
 
-10. Go to advance setting, then click and 'on' for 'only build for pull requests'
+12. Go to advance setting, then click and 'on' for 'only build for pull requests'
 ![circleci pr only](https://user-images.githubusercontent.com/11821799/45927231-ff3d4480-bf59-11e8-8405-a16d54a6c014.png)
 
 ## TravisCI
