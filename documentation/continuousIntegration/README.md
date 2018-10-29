@@ -13,7 +13,7 @@ For us, we will use Java with gradle.
 2. Add this project.
 ![circleci add project](https://user-images.githubusercontent.com/11821799/45926981-edf23900-bf55-11e8-9a04-6502f0012190.png)
 
-3. Create `.circleci` directory in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
+3. Create `.circleci` folder in your project root directory (if you have been following the tutorial without renaming anything, your root will be ci-hands-on-workshop).
 
 4. Under `.circleci` folder create a config file name `config.yml`. This file will be the place where we add the configuration for our project continuous integration.
 
