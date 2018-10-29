@@ -116,3 +116,7 @@ FAILURE: Build failed with an exception.
 3. Does not matter how many functions we have in our application. It verifies all of them ! 
 
 Although we already gain benefits from adding unit tests into our application, defects can and always slip into master branch. That is what we will handle in the next section with Continuous Integration.
+
+## Next
+
+[Connect Continuous Integration services with GitHub](../continuousIntegration)

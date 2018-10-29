@@ -1,12 +1,12 @@
 # Format currency correctly
 
-From the previous steps, we made sure that only when our program works correctly, it will be allowed to merge into the master branch.
+From the previous steps, we made sure that only the changes that do not break our program are allowed to be merged into the `master` branch.
 
-Since our `CurrencyFormatter.java` does not work correctly, we need to make some changes to it.  
+Right now, `CurrencyFormatter.java` is causing the tests to fail meaning that it does not work correctly. Therefore, we need to fix it.
 
 ## Making changes
 
-It is fine to try spotting the mistakes but that is not our focus for today's workshop, so let's move on.  
+It is fine to try spotting mistakes but that is not our focus for today's workshop, so let's move on.  
 Update `src/main/java/utils/CurrencyFormatter.java` to match the code below.
 
 ```java
@@ -24,9 +24,9 @@ public class CurrencyFormatter {
 
 ## Try building our project
 
-Now that we have fixed out `format(String)` method.  
+Now that we have fixed our `format(String)` method.  
 
-It is time to verify that it produces the correct results. Try running the following command to build your project.
+It is time to verify the correctness of the results. Try running the following command to build your project.
 
 ```
 ./gradlew build
