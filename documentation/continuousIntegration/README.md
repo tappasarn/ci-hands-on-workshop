@@ -140,3 +140,7 @@ language: java
 
 12. Disable 'build pushed branches'
 ![travis pr only](https://user-images.githubusercontent.com/11821799/45927572-70332b00-bf5f-11e8-87ca-7b0b8d8d5bdc.png)
+
+## Next
+
+[Protected Branch](../protectedBranch)

@@ -22,4 +22,8 @@ In this section, we want to block the defected pull requests from being able to 
 
 4. Now you will not be able to merge defected pull requests that are being reported from your CI service into the master branch. Everyone in the team will have to follow this rules even if you are the admin of the project.
 
-In the next step, we will fix our code to satisfy the requirements described in the unit tests.
+In the next step, we will fix our `CurrencyFormatter.java` so that it satisfies the requirements described in the unit tests.
+
+## Next
+
+[Fixing CurrencyFormatter](./fixCurrencyFormatter)
